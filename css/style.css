@@ -84,3 +84,145 @@ h1 {
   min-height: 24px;
   font-size: 1.25rem;
 }
+
+.cabecalho {
+  border-bottom: 1px solid #2b2d4b;
+  background: rgba(15 , 16  , 32, 0.9);
+}
+
+.cabecalho-conteudo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(1120px, calc(100% - 32px));
+  min-height: 72px;
+  margin: 0 auto;
+}
+
+.logo {
+  color: var(--text);
+  font-size: 1.35rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navegacao {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover, 
+.nav-link.ativo {
+  color: var(--primary);
+}
+
+.biblioteca-topo {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.rotulo-pagina {
+  margin-bottom: 6px;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+}
+
+.biblioteca-topo h1 {
+  margin: 0;
+}
+
+.acoes-biblioteca {
+  display: flex;
+  gap: 12px;
+}
+
+.campo-busca,
+.botao-adicionar,
+.filtro {
+  border: 1px solid #2b2d4b;
+  border-radius: 10px;
+  font: inherit;
+}
+
+.campo-busca {
+  width: 180px;
+  padding: 11px 14px;
+  background: var(--surface);
+  color: var(--text);
+  outline: none;
+}
+
+.campo-busca:focus {
+  border-color: var(--primary);
+}
+
+.botao-adicionar {
+  padding: 11px 16px;
+  border-color: var(--primary);
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+}
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.filtro {
+  padding: 8px 14px;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.filtro:hover,
+.filtro.ativo {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: white;
+}
+
+@media (max-width: 640px) {
+  .biblioteca-topo,
+  .acoes-biblioteca {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .campo-busca {
+    width: 100%;
+  }
+}
+
+.jogo-capa-placeholder {
+  display: grid;
+  place-items: center;
+  min-height: 140px;
+  border-radius: 10px;
+  background:
+    linear-gradient(135deg, rgba(139, 92, 246, 0.85), rgba(30, 64, 175, 0.7)),
+    #242445;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+}
+
+.jogo-capa-placeholder span {
+  max-width: 80%;
+  font-size: 0.85rem;
+  font-weight: bold;
+}

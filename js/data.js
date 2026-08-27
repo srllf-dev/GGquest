@@ -33,8 +33,76 @@ export const jogos = [
   review: "um jogo incrível com uma história envolvente e gráficos impressionantes",
   dataInicio: null,
   dataConclusao: null,
-  completoCem: false}
+  completoCem: false},
+
+  {
+    nome: "Hollow Knight",
+    capa: "",
+    genero: "Metroidvania",
+    nota: 9.8,
+    status: "concluido",
+    favorito: true,
+    tags: ["Desafio", "Exploração", "Indie"],
+    review: "Atmosfera espetacular, trilha sonora marcante e chefões desafiadores.",
+    dataInicio: null,
+    dataConclusao: null,
+    completoCem: true
+  },
+  {
+    nome: "Elden Ring",
+    capa: "",
+    genero: "Soulslike",
+    nota: 9.5,
+    status: "jogando",
+    favorito: true,
+    tags: ["Mundo Aberto", "Fantasia"],
+    review: "Mundo gigante e cheio de segredos, exige muita paciência mas é gratificante.",
+    dataInicio: null,
+    dataConclusao: null,
+    completoCem: false
+  },
+  {
+    nome: "Cyberpunk 2077",
+    capa: "",
+    genero: "RPG",
+    nota: 8.5,
+    status: "concluido",
+    favorito: false,
+    tags: ["Futurista", "História"],
+    review: "Melhorou muito após as atualizações, a ambientação da cidade é incrível.",
+    dataInicio: null,
+    dataConclusao: null,
+    completoCem: false
+  },
+  {
+    nome: "Stardew Valley",
+    capa: "",
+    genero: "Simulação",
+    nota: 9.0,
+    status: "jogando",
+    favorito: false,
+    tags: ["Relaxante", "Indie", "Nostalgia"],
+    review: "Jogo extremamente viciante e relaxante para passar o tempo.",
+    dataInicio: null,
+    dataConclusao: null,
+    completoCem: false
+  },
+  {
+    nome: "God of War Ragnarök",
+    capa: "",
+    genero: "Ação",
+    nota: 9.2,
+    status: "concluido",
+    favorito: true,
+    tags: ["Mitologia", "Aventura"],
+    review: "Combate excelente e o encerramento da jornada do Kratos no norte é emocionante.",
+    dataInicio: null,
+    dataConclusao: null,
+    completoCem: false
+  }
 ];
+
+
 
 export const STATUS_EXIBICAO = {
   "jogando": "🎮 Jogando",

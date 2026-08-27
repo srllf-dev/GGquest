@@ -7,10 +7,51 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Lista de Jogos</h1>
-    <div id="jogos-lista"></div>
+  <header class="cabecalho">
+    <div class="cabecalho-conteudo">
+      <a class="logo" href="#">GGquest</a>
+
+      <nav class="navegacao">
+        <a class="nav-link ativo" href="#">Biblioteca</a>
+        <a class="nav-link" href="#">Ranking</a>
+        <a class="nav-link" href="#">Quests</a>
+        <a class="nav-link" href="#">Perfil</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="biblioteca-topo">
+      <div>
+        <p class="rotulo-pagina">COLEÇÃO PESSOAL</p>
+        <h1>Minha Biblioteca</h1>
+      </div>
+
+      <div class="acoes-biblioteca">
+        <input
+          class="campo-busca"
+          type="search"
+          placeholder="Buscar jogos"
+          aria-label="Buscar jogos"
+        />
+        <button class="botao-adicionar" type="button">
+          + Adicionar jogo
+        </button>
+      </div>
+    </section>
+
+  <div class="filtros" aria-label="Filtros da biblioteca">
+    <button class="filtro ativo" type="button" data-status="todos">Todos</button>
+    <button class="filtro" type="button" data-status="jogando">Jogando</button>
+    <button class="filtro" type="button" data-status="concluido">Concluídos</button>
+    <button class="filtro" type="button" data-status="quero">Quero jogar</button>
+    <button class="filtro" type="button" data-status="dropado">Abandonados</button>
   </div>
+
+    <div id="jogos-lista"></div>
+  </main>
+  
   <script type="module" src="js/main.js"></script>
 </body>
+
 </html>
