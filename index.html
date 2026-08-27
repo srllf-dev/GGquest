@@ -48,6 +48,128 @@
     <button class="filtro" type="button" data-status="dropado">Abandonados</button>
   </div>
 
+<form id="formulario-jogo" class="formulario-jogo" hidden>
+  <div class="formulario-cabecalho">
+    <div>
+      <p class="rotulo-pagina">NOVA ENTRADA</p>
+      <h2>Registrar jogo</h2>
+    </div>
+
+    <button class="botao-fechar-formulario" type="button" aria-label="Fechar formulário">
+      ×
+    </button>
+  </div>
+
+  <section class="formulario-secao">
+    <h3>Sobre o jogo</h3>
+
+    <div class="campos-formulario">
+      <label>
+        Nome do jogo
+        <input id="nome-jogo" type="text" placeholder="Ex.: Hollow Knight">
+      </label>
+
+      <label>
+        Gênero
+        <input id="genero-jogo" type="text" placeholder="Ex.: Metroidvania">
+      </label>
+    </div>
+  </section>
+
+  <section class="formulario-secao">
+    <h3>Em que ponto da jornada ele está?</h3>
+
+    <div class="opcoes-status">
+      <label class="opcao-status">
+        <input type="radio" name="status" value="quero" checked>
+        <span> Quero jogar</span>
+      </label>
+
+      <label class="opcao-status">
+        <input type="radio" name="status" value="jogando">
+        <span> Jogando</span>
+      </label>
+
+      <label class="opcao-status">
+        <input type="radio" name="status" value="concluido">
+        <span> Concluído</span>
+      </label>
+
+      <label class="opcao-status">
+        <input type="radio" name="status" value="dropado">
+        <span> Abandonado</span>
+      </label>
+    </div>
+  </section>
+
+  <section class="formulario-secao">
+  <div class="avaliacao-cabecalho">
+    <div>
+      <h3>Sua nota</h3>
+      <p>Digite uma nota ou use a escala.</p>
+    </div>
+
+    <div class="nota-digitada">
+      <input
+        id="nota-digitada"
+        type="number"
+        min="0"
+        max="10"
+        step="0.1"
+        value="0.0"
+        aria-label="Sua nota"
+      >
+      <span>/ 10</span>
+    </div>
+  </div>
+
+  <div class="escala-nota">
+    <span>0</span>
+
+    <input
+      id="nota-jogo"
+      class="controle-nota"
+      type="range"
+      min="0"
+      max="10"
+      step="0.1"
+      value="0"
+    >
+
+    <span>10</span>
+  </div>
+</section>
+
+  <section class="formulario-secao">
+    <label class="campo-analise" for="analise-jogo">
+      <span>Análise pessoal</span>
+      <textarea
+        id="analise-jogo"
+        rows="5"
+        placeholder="O que você achou do jogo? Fale sobre história, gameplay, trilha, momentos marcantes..."
+      ></textarea>
+    </label>
+  </section>
+
+  <label class="cartao-favorito">
+  <input id="favorito-jogo" type="checkbox">
+
+  <span class="cartao-favorito-conteudo">
+    <span class="icone-favorito">♥</span>
+
+    <span>
+      <strong>Jogo favorito</strong>
+      <small>Marque jogos que definem sua jornada.</small>
+    </span>
+  </span>
+</label>
+
+  <div class="acoes-formulario">
+    <button class="botao-cancelar" type="button">Cancelar</button>
+    <button class="botao-salvar" type="button">Salvar jogo</button>
+  </div>
+</form>
+
     <div id="jogos-lista"></div>
   </main>
   
