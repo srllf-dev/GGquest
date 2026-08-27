@@ -1,8 +1,86 @@
-/* GGquest — estilos
-   Identidade visual (cores, tipografia) ainda em definição. */
+:root {
+  --bg: #0f1020;
+  --surface: #191a2e;
+  --text: #f4f4f8;
+  --text-muted: #a7a8bc;
+  --primary: #8b5cf6;
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 48px 0;
+}
+
+h1 {
+  margin-bottom: 32px;
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+#jogos-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.jogo-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 190px;
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid #2b2d4b;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.jogo-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+}
+
+.jogo-status {
+  align-self: flex-start;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #292347;
+  color: #c9b8ff;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.jogo-nome {
+  font-size: 1.25rem;
+}
+
+.jogo-genero {
+  color: var(--text-muted);
+}
+
+.jogo-nota {
+  margin-top: auto;
+  color: #facc15;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.jogo-favorito {
+  min-height: 24px;
+  font-size: 1.25rem;
 }
