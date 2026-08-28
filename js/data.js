@@ -1,4 +1,4 @@
-export const jogos = [
+export const jogosIniciais = [
   {nome: "Minecraft",
   capa: "",
   genero: "Sandbox",
@@ -99,8 +99,47 @@ export const jogos = [
     dataInicio: null,
     dataConclusao: null,
     completoCem: false
-  }
+  },
+    {
+    nome: "GTA VI",
+    capa: "",
+    genero: "Ação",
+    nota: 10.0,
+    status: "quero",
+    favorito: true,
+    tags: ["Ação", "Mundo Aberto"],
+    review: "Jogo extremamente viciante e relaxante para passar o tempo.",
+    dataInicio: null,
+    dataConclusao: null,
+    completoCem: false
+    }
 ];
+
+const CHAVE_JOGOS = "ggquest-jogos";
+
+function copiarJogosIniciais() {
+  return JSON.parse(JSON.stringify(jogosIniciais));
+}
+
+export function carregarJogos() {
+  const jogosSalvos = localStorage.getItem(CHAVE_JOGOS);
+
+  if (!jogosSalvos) {
+    return copiarJogosIniciais();
+  }
+
+  try {
+    const jogos = JSON.parse(jogosSalvos);
+
+    return Array.isArray(jogos) ? jogos : copiarJogosIniciais();
+  } catch {
+    return copiarJogosIniciais();
+  }
+}
+
+export function salvarJogos(jogos) {
+  localStorage.setItem(CHAVE_JOGOS, JSON.stringify(jogos));
+}
 
 
 

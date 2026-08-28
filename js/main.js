@@ -1,6 +1,7 @@
-import { jogos } from "./data.js";
+import { carregarJogos, salvarJogos } from "./data.js";
 import { renderizarJogos } from "./ui.js";
 
+let jogos = carregarJogos();
 let filtroAtivo = "todos";
 let termoBusca = "";
 
@@ -27,6 +28,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const botaoFecharFormulario = document.querySelector(".botao-fechar-formulario");
   const controleNota = document.querySelector("#nota-jogo");
   const notaDigitada = document.querySelector("#nota-digitada");
+  const botaoSalvar = document.querySelector(".botao-salvar");
+  const campoGeneroJogo = document.querySelector("#genero-jogo");
+  const campoAnaliseJogo = document.querySelector("#analise-jogo");
+  const campoFavoritoJogo = document.querySelector("#favorito-jogo");
 
 function limitarNota(valor) {
   const nota = Number(valor);
@@ -76,6 +81,9 @@ botaoAdicionar.addEventListener("click", () => {
 function fecharFormulario() {
   formularioJogo.hidden = true;
   formularioJogo.reset();
+
+  notaDigitada.value = "0.0";
+  atualizarBarra(0);
 }
 
 botaoCancelar.addEventListener("click", fecharFormulario);
@@ -98,6 +106,39 @@ botaoFecharFormulario.addEventListener("click", fecharFormulario);
     termoBusca = evento.target.value.trim().toLowerCase();
     atualizarLista();
   });
+
+  botaoSalvar.addEventListener("click", () => {
+  const nome = campoNomeJogo.value.trim();
+
+  if (!nome) {
+    campoNomeJogo.focus();
+    return;
+  }
+
+  const statusSelecionado = document.querySelector(
+    'input[name="status"]:checked'
+  );
+
+  const novoJogo = {
+    nome,
+    capa: "",
+    genero: campoGeneroJogo.value.trim() || "Não informado",
+    nota: Number(notaDigitada.value),
+    status: statusSelecionado.value,
+    favorito: campoFavoritoJogo.checked,
+    tags: [],
+    review: campoAnaliseJogo.value.trim(),
+    dataInicio: null,
+    dataConclusao: null,
+    completoCem: false
+  };
+
+  jogos.push(novoJogo);
+  salvarJogos(jogos);
+
+  fecharFormulario();
+  atualizarLista();
+});
 
   atualizarLista();
 });
