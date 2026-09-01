@@ -21,6 +21,16 @@ export function renderizarJogos(jogos) {
     <p class="jogo-genero">${jogo.genero}</p>
     <p class="jogo-nota">${jogo.nota}</p>
     <p class="jogo-favorito">${jogo.favorito ? "❤️": ""}</p>
+
+    <div class="jogo-acoes">
+      <button
+        class="botao-excluir"
+        type="button"
+        data-indice="${jogo.indice}"
+      >
+        Excluir
+      </button>
+    </div>
   </div>
 `;
   });

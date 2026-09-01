@@ -567,3 +567,26 @@ h1 {
   appearance: textfield;
   -moz-appearance: textfield;
 }
+
+.jogo-acoes {
+  display: flex;
+  justify-content: end;
+  margin-top: 4px;
+}
+
+.botao-excluir {
+  padding: 7px 10px;
+  border: 1px solid #7f1d1d;
+  border-radius: 8px;
+  background: transparent;
+  color: #fca5a5;
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.botao-excluir:hover {
+  background: #7f1d1d;
+  color: white;
+}
