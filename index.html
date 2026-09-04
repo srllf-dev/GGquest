@@ -12,8 +12,8 @@
       <a class="logo" href="#">GGquest</a>
 
       <nav class="navegacao">
-        <a class="nav-link ativo" href="#">Biblioteca</a>
-        <a class="nav-link" href="#">Ranking</a>
+        <a class="nav-link ativo" href="#biblioteca" data-pagina="biblioteca">Biblioteca</a>
+        <a class="nav-link" href="#ranking" data-pagina="ranking">Ranking</a>
         <a class="nav-link" href="#">Quests</a>
         <a class="nav-link" href="#">Perfil</a>
       </nav>
@@ -21,6 +21,7 @@
   </header>
 
   <main class="container">
+    <section id="pagina-biblioteca" class="pagina">
     <section class="biblioteca-topo">
       <div>
         <p class="rotulo-pagina">COLEÇÃO PESSOAL</p>
@@ -170,7 +171,47 @@
   </div>
 </form>
 
-    <div id="jogos-lista"></div>
+      <div id="jogos-lista"></div>
+    </section>
+
+    <section id="pagina-ranking" class="pagina" hidden>
+      <section class="ranking-topo">
+        <p class="rotulo-pagina">SEUS FAVORITOS</p>
+        <h1>Meu Ranking</h1>
+        <p class="ranking-descricao">
+          Seus jogos ordenados pelas notas que marcaram sua jornada.
+        </p>
+      </section>
+
+      <section class="secao-ranking">
+        <h2>Top 3</h2>
+
+        <div class="ranking-podio">
+          <article class="podio-card segundo">
+            <span class="podio-posicao">#2</span>
+            <span class="podio-jogo">—</span>
+          </article>
+
+          <article class="podio-card primeiro">
+            <span class="podio-posicao">#1</span>
+            <span class="podio-jogo">—</span>
+          </article>
+
+          <article class="podio-card terceiro">
+            <span class="podio-posicao">#3</span>
+            <span class="podio-jogo">—</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="secao-ranking">
+        <h2>Ranking completo</h2>
+
+        <div class="ranking-lista">
+          <p class="ranking-vazio">Seus jogos avaliados aparecerão aqui.</p>
+        </div>
+      </section>
+    </section>
   </main>
   
   <script type="module" src="js/main.js"></script>

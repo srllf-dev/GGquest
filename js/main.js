@@ -26,6 +26,8 @@ function atualizarLista() {
 
 document.addEventListener("DOMContentLoaded", () => {
   const filtros = document.querySelectorAll(".filtro");
+  const linksNavegacao = document.querySelectorAll(".nav-link[data-pagina]");
+  const paginas = document.querySelectorAll(".pagina");
   const campoBusca = document.querySelector(".campo-busca");
   const listaJogos = document.querySelector("#jogos-lista");
   const botaoAdicionar = document.querySelector(".botao-adicionar");
@@ -170,6 +172,24 @@ document.addEventListener("DOMContentLoaded", () => {
     jogos.splice(indice, 1);
     salvarJogos(jogos);
     atualizarLista();
+  });
+
+  linksNavegacao.forEach((link) => {
+    link.addEventListener("click", (evento) => {
+      evento.preventDefault();
+
+      const paginaEscolhida = link.dataset.pagina;
+
+      paginas.forEach((pagina) => {
+        pagina.hidden = pagina.id !== `pagina-${paginaEscolhida}`;
+      });
+
+      linksNavegacao.forEach((item) => {
+        item.classList.remove("ativo");
+      });
+
+      link.classList.add("ativo");
+    });
   });
 
   atualizarBarra(controleNota.value);
